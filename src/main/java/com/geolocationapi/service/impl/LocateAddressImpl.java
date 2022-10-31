@@ -1,6 +1,8 @@
 package com.geolocationapi.service.impl;
 
 import com.geolocationapi.dto.gsonmap.Address;
+import com.geolocationapi.dto.gsonmap.Query;
+import com.geolocationapi.dto.gsonmap.Result;
 import com.geolocationapi.service.LocateAddress;
 import com.geolocationapi.service.Utils;
 import com.google.gson.GsonBuilder;
@@ -12,8 +14,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.Collection;
-import java.util.Collections;
+import java.util.*;
 
 @Service
 @Slf4j
@@ -37,11 +38,23 @@ public class LocateAddressImpl implements LocateAddress {
             e.printStackTrace();
         }
 
-        return new GsonBuilder().create().fromJson(res != null ?  res.body() : null, Address.class);
+        return res != null ? new GsonBuilder().create().fromJson(res.body(), Address.class) : new Address(new Query(addressStr));
     }
 
     @Override
-    public Collection<Address> locateAddresses(Collection<String> addresses) {
-        return Collections.emptyList();
+    public List<Address> locateAddresses(Collection<String> addresses) {
+        return addresses.stream().map(address -> {
+            try {
+                var addressObj = locateAddress(address);
+                // LIMIT RESULTS TO ONE
+                if (addressObj.getResults().size() > 1) addressObj.setResults(addressObj.getResults().subList(0, 1));
+                return addressObj;
+            } catch (InterruptedException e) {
+                log.warn("Thread interrupted: {} with message: {}", Thread.currentThread().getId(), e.getMessage());
+                Thread.currentThread().interrupt();
+            }
+            //Return an empty address with the query that was interrupted.
+            return new Address(new Query("Interrupted search for:\n " + address));
+        }).toList();
     }
 }
