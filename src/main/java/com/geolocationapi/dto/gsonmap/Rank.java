@@ -16,7 +16,7 @@ public class Rank {
     private double popularity;
     @SerializedName("confidence")
     @Expose
-    private long confidence;
+    private double confidence;
     @SerializedName("confidence_city_level")
     @Expose
     private long confidenceCityLevel;

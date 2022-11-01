@@ -2,7 +2,6 @@ package com.geolocationapi.service.impl;
 
 import com.geolocationapi.dto.gsonmap.Address;
 import com.geolocationapi.dto.gsonmap.Query;
-import com.geolocationapi.dto.gsonmap.Result;
 import com.geolocationapi.service.LocateAddress;
 import com.geolocationapi.service.Utils;
 import com.google.gson.GsonBuilder;
@@ -14,7 +13,8 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.*;
+import java.util.Collection;
+import java.util.List;
 
 @Service
 @Slf4j
@@ -22,6 +22,7 @@ public class LocateAddressImpl implements LocateAddress {
     private static final HttpClient httpClient = HttpClient.newHttpClient();
     public static final String API_KEY = "bdc0c195ade5443bb9528b0d4beff3cf";
     public static final String API_URL = "https://api.geoapify.com/v1/geocode/search?text=%s&format=json&apiKey=%s";
+
 
     @Override
     public Address locateAddress(String addressStr) throws InterruptedException {
@@ -38,7 +39,8 @@ public class LocateAddressImpl implements LocateAddress {
             e.printStackTrace();
         }
 
-        return res != null ? new GsonBuilder().create().fromJson(res.body(), Address.class) : new Address(new Query(addressStr));
+        return res != null ? new GsonBuilder().create()
+                .fromJson(res.body(), Address.class) : new Address(new Query(addressStr));
     }
 
     @Override
