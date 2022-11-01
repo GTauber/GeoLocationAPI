@@ -1,6 +1,7 @@
 package com.geolocationapi.controller;
 
 import com.geolocationapi.model.Response;
+import com.geolocationapi.service.impl.DistanceServiceImpl;
 import com.geolocationapi.service.impl.LocateAddressImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,9 +20,11 @@ public class LocateController {
 
 
     private final LocateAddressImpl locateAddressImpl;
+    private final DistanceServiceImpl distanceServiceImpl;
 
-    public LocateController(LocateAddressImpl locateAddressImpl) {
+    public LocateController(LocateAddressImpl locateAddressImpl, DistanceServiceImpl distanceServiceImpl) {
         this.locateAddressImpl = locateAddressImpl;
+        this.distanceServiceImpl = distanceServiceImpl;
     }
 
     @GetMapping()
@@ -36,10 +39,13 @@ public class LocateController {
                             .build());
 
         }
+
+        var response = distanceServiceImpl.distanceProcessor(locateAddressImpl.locateAddresses(addresses));
+
         return ResponseEntity.ok(
                 Response.builder()
                         .timestamp(LocalDateTime.now())
-                        .data(Map.of("Distance", locateAddressImpl.locateAddresses(addresses)))
+                        .data(Map.of("Distance", response))
                         .message("Distance retrieved successfully")
                         .status(HttpStatus.OK)
                         .statusCode(HttpStatus.OK.value())
