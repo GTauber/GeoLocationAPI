@@ -2,7 +2,7 @@ package com.geolocationapi.service.impl;
 
 import com.geolocationapi.dto.gsonmap.Address;
 import com.geolocationapi.dto.gsonmap.Query;
-import com.geolocationapi.service.LocateAddress;
+import com.geolocationapi.service.LocateAddressService;
 import com.geolocationapi.service.Utils;
 import com.google.gson.GsonBuilder;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +18,7 @@ import java.util.List;
 
 @Service
 @Slf4j
-public class LocateAddressImpl implements LocateAddress {
+public class LocateAddressServiceImpl implements LocateAddressService {
     private static final HttpClient httpClient = HttpClient.newHttpClient();
     public static final String API_KEY = "bdc0c195ade5443bb9528b0d4beff3cf";
     public static final String API_URL = "https://api.geoapify.com/v1/geocode/search?text=%s&format=json&apiKey=%s";

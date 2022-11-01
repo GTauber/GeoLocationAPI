@@ -1,0 +1,227 @@
+{
+  "timestamp": "2022-11-01T12:55:58.531292454",
+  "statusCode": 200,
+  "status": "OK",
+  "message": "Distance retrieved successfully",
+  "data": {
+    "Distance": {
+      "distances": [
+        {
+          "addressA": {
+            "results": [
+              {
+                "lon": -47.8823172,
+                "lat": -15.7934036,
+                "formatted": "Brasília - Federal District, 70.701-010, Brazil",
+                "rank": {
+                  "importance": 0.68050209029916,
+                  "popularity": 7.979068072543841,
+                  "confidence": 1.0,
+                  "confidenceCityLevel": 0,
+                  "confidenceStreetLevel": 0,
+                  "matchType": "full_match"
+                }
+              }
+            ],
+            "query": {
+              "text": "Brasilia DF, Brasil"
+            }
+          },
+          "addressB": {
+            "results": [
+              {
+                "lon": -43.1697526,
+                "lat": -22.9045592,
+                "formatted": "Praça Marechal Âncora 122, Centro, Rio de Janeiro - Southeast, Brazil",
+                "rank": {
+                  "importance": 0.0,
+                  "popularity": 7.971314049049733,
+                  "confidence": 1.0,
+                  "confidenceCityLevel": 0,
+                  "confidenceStreetLevel": 0,
+                  "matchType": "full_match"
+                }
+              }
+            ],
+            "query": {
+              "text": "Praça Mal. Âncora, 122 Centro, Rio de Janeiro RJ, 20021200"
+            }
+          },
+          "kmDistance": 790.7244253000433
+        },
+        {
+          "addressA": {
+            "results": [
+              {
+                "lon": -47.8823172,
+                "lat": -15.7934036,
+                "formatted": "Brasília - Federal District, 70.701-010, Brazil",
+                "rank": {
+                  "importance": 0.68050209029916,
+                  "popularity": 7.979068072543841,
+                  "confidence": 1.0,
+                  "confidenceCityLevel": 0,
+                  "confidenceStreetLevel": 0,
+                  "matchType": "full_match"
+                }
+              }
+            ],
+            "query": {
+              "text": "Brasilia DF, Brasil"
+            }
+          },
+          "addressB": {
+            "results": [
+              {
+                "lon": -43.176043,
+                "lat": -22.9573161,
+                "formatted": "Boston Consulting Group, Rua Lauro Müller 116, Botafogo, Rio de Janeiro - RJ, 22290-160, Brazil",
+                "rank": {
+                  "importance": 0.7474899222535407,
+                  "popularity": 8.038034323994104,
+                  "confidence": 1.0,
+                  "confidenceCityLevel": 1,
+                  "confidenceStreetLevel": 1,
+                  "matchType": "inner_part"
+                }
+              }
+            ],
+            "query": {
+              "text": "Rua Lauro Muller 116, Botafogo, Rio de Janeiro,RJ, 22290160"
+            }
+          },
+          "kmDistance": 796.5907249255373
+        },
+        {
+          "addressA": {
+            "results": [
+              {
+                "lon": -43.1697526,
+                "lat": -22.9045592,
+                "formatted": "Praça Marechal Âncora 122, Centro, Rio de Janeiro - Southeast, Brazil",
+                "rank": {
+                  "importance": 0.0,
+                  "popularity": 7.971314049049733,
+                  "confidence": 1.0,
+                  "confidenceCityLevel": 0,
+                  "confidenceStreetLevel": 0,
+                  "matchType": "full_match"
+                }
+              }
+            ],
+            "query": {
+              "text": "Praça Mal. Âncora, 122 Centro, Rio de Janeiro RJ, 20021200"
+            }
+          },
+          "addressB": {
+            "results": [
+              {
+                "lon": -43.176043,
+                "lat": -22.9573161,
+                "formatted": "Boston Consulting Group, Rua Lauro Müller 116, Botafogo, Rio de Janeiro - RJ, 22290-160, Brazil",
+                "rank": {
+                  "importance": 0.7474899222535407,
+                  "popularity": 8.038034323994104,
+                  "confidence": 1.0,
+                  "confidenceCityLevel": 1,
+                  "confidenceStreetLevel": 1,
+                  "matchType": "inner_part"
+                }
+              }
+            ],
+            "query": {
+              "text": "Rua Lauro Muller 116, Botafogo, Rio de Janeiro,RJ, 22290160"
+            }
+          },
+          "kmDistance": 5.866299625494019
+        }
+      ],
+      "minorDistance": {
+        "addressA": {
+          "results": [
+            {
+              "lon": -43.1697526,
+              "lat": -22.9045592,
+              "formatted": "Praça Marechal Âncora 122, Centro, Rio de Janeiro - Southeast, Brazil",
+              "rank": {
+                "importance": 0.0,
+                "popularity": 7.971314049049733,
+                "confidence": 1.0,
+                "confidenceCityLevel": 0,
+                "confidenceStreetLevel": 0,
+                "matchType": "full_match"
+              }
+            }
+          ],
+          "query": {
+            "text": "Praça Mal. Âncora, 122 Centro, Rio de Janeiro RJ, 20021200"
+          }
+        },
+        "addressB": {
+          "results": [
+            {
+              "lon": -43.176043,
+              "lat": -22.9573161,
+              "formatted": "Boston Consulting Group, Rua Lauro Müller 116, Botafogo, Rio de Janeiro - RJ, 22290-160, Brazil",
+              "rank": {
+                "importance": 0.7474899222535407,
+                "popularity": 8.038034323994104,
+                "confidence": 1.0,
+                "confidenceCityLevel": 1,
+                "confidenceStreetLevel": 1,
+                "matchType": "inner_part"
+              }
+            }
+          ],
+          "query": {
+            "text": "Rua Lauro Muller 116, Botafogo, Rio de Janeiro,RJ, 22290160"
+          }
+        },
+        "kmDistance": 5.866299625494019
+      },
+      "majorDistance": {
+        "addressA": {
+          "results": [
+            {
+              "lon": -47.8823172,
+              "lat": -15.7934036,
+              "formatted": "Brasília - Federal District, 70.701-010, Brazil",
+              "rank": {
+                "importance": 0.68050209029916,
+                "popularity": 7.979068072543841,
+                "confidence": 1.0,
+                "confidenceCityLevel": 0,
+                "confidenceStreetLevel": 0,
+                "matchType": "full_match"
+              }
+            }
+          ],
+          "query": {
+            "text": "Brasilia DF, Brasil"
+          }
+        },
+        "addressB": {
+          "results": [
+            {
+              "lon": -43.176043,
+              "lat": -22.9573161,
+              "formatted": "Boston Consulting Group, Rua Lauro Müller 116, Botafogo, Rio de Janeiro - RJ, 22290-160, Brazil",
+              "rank": {
+                "importance": 0.7474899222535407,
+                "popularity": 8.038034323994104,
+                "confidence": 1.0,
+                "confidenceCityLevel": 1,
+                "confidenceStreetLevel": 1,
+                "matchType": "inner_part"
+              }
+            }
+          ],
+          "query": {
+            "text": "Rua Lauro Muller 116, Botafogo, Rio de Janeiro,RJ, 22290160"
+          }
+        },
+        "kmDistance": 796.5907249255373
+      }
+    }
+  }
+}

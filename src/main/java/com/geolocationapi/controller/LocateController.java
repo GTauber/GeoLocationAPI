@@ -2,7 +2,7 @@ package com.geolocationapi.controller;
 
 import com.geolocationapi.model.Response;
 import com.geolocationapi.service.impl.DistanceServiceImpl;
-import com.geolocationapi.service.impl.LocateAddressImpl;
+import com.geolocationapi.service.impl.LocateAddressServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,10 +19,10 @@ import java.util.Map;
 public class LocateController {
 
 
-    private final LocateAddressImpl locateAddressImpl;
+    private final LocateAddressServiceImpl locateAddressImpl;
     private final DistanceServiceImpl distanceServiceImpl;
 
-    public LocateController(LocateAddressImpl locateAddressImpl, DistanceServiceImpl distanceServiceImpl) {
+    public LocateController(LocateAddressServiceImpl locateAddressImpl, DistanceServiceImpl distanceServiceImpl) {
         this.locateAddressImpl = locateAddressImpl;
         this.distanceServiceImpl = distanceServiceImpl;
     }

@@ -3,8 +3,8 @@ package com.geolocationapi.service;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
-import static com.geolocationapi.service.impl.LocateAddressImpl.API_KEY;
-import static com.geolocationapi.service.impl.LocateAddressImpl.API_URL;
+import static com.geolocationapi.service.impl.LocateAddressServiceImpl.API_KEY;
+import static com.geolocationapi.service.impl.LocateAddressServiceImpl.API_URL;
 
 public class Utils {
 

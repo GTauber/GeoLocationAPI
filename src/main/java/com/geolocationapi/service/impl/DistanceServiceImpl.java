@@ -19,11 +19,11 @@ public class DistanceServiceImpl implements DistanceService {
     @Override
     public LocationsResponse distanceProcessor(Collection<Address> addresses) {
         List<Distance> distances = new ArrayList<>();
-        addresses.forEach(address -> addresses.forEach(address2 -> {
-            if (!address.equals(address2)) {
-               distances.add(calculateDistance(address, address2));
+        for (int i = 0; i < addresses.size(); i++) {
+            for (int j = i+1; j < addresses.size(); j++) {
+                distances.add(calculateDistance((Address) addresses.toArray()[i], (Address) addresses.toArray()[j]));
             }
-        }));
+        }
         return new LocationsResponse(distances, calculateMinorDistance(distances), calculateMajorDistance(distances));
     }
 
@@ -41,7 +41,7 @@ public class DistanceServiceImpl implements DistanceService {
         //Haversine formula
         double haversineRes = Math.pow(Math.sin(dlat / 2), 2)
                 + Math.cos(lat1) * Math.cos(lat2)
-                * Math.pow(Math.sin(dlon / 2),2);
+                * Math.pow(Math.sin(dlon / 2), 2);
 
         double c = 2 * Math.asin(Math.sqrt(haversineRes));
 
